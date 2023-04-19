@@ -1,0 +1,42 @@
+:root {
+    --clr-primary: #2874f0;
+  }
+  
+  header {
+    background-color: var(--clr-primary);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .brand {
+    font-size: 28px;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 20px;
+  }
+  
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .product-img {
+    width: 150px;
+  }
+  
+  .product-card {
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.1);
+    max-width: 20%;
+  }
+  
