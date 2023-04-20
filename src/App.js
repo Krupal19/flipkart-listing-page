@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import ProductContainer from './components/ProductContainer';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
