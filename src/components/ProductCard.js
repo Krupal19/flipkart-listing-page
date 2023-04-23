@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineHeart, AiFillHeart, AiFillStar } from "react-icons/ai";
+import { AiOutlineHeart, AiFillStar } from "react-icons/ai";
 import Button from './Button';
 
 function ProductCard({ title, description, imageURL, price, rating, stock, discount }) {
@@ -7,7 +7,7 @@ function ProductCard({ title, description, imageURL, price, rating, stock, disco
         <div className="product-card">
             <AiOutlineHeart className='like-button' />
             {/* <AiFillHeart color="red" className='linkbtn'/> */}
-            <img src={imageURL} className="product-img" />
+            <img src={imageURL} className="product-img" alt={title} />
             <p className='product-title'>{title}</p>
             <p className='product-description'>{description}</p>
             <div className="flex">
