@@ -14,10 +14,10 @@ function Header({ setSearchTitle }) {
             />
             <ul className="menu">
                 <li>
-                    <a href="App.js">Home</a>
+                    <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="Cart.js">Cart</a>
+                    <a href="#">Cart</a>
                 </li>
             </ul>
         </header>
