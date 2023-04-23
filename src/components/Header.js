@@ -14,10 +14,10 @@ function Header({ setSearchTitle }) {
             />
             <ul className="menu">
                 <li>
-                    <a href="#">Home</a>
+                    Home
                 </li>
                 <li>
-                    <a href="#">Cart</a>
+                    Cart
                 </li>
             </ul>
         </header>
