@@ -1,13 +1,14 @@
 import './App.css';
 import Header from './components/Header';
 import ProductContainer from './components/ProductContainer';
-import SearchBar from './components/SearchBar';
+import { useState } from "react";
 
 function App() {
+  const [searchTitle, setSearchTitle] = useState("");
   return (
     <div className="App">
-      <Header />
-      <ProductContainer />
+      <Header setSearchTitle={setSearchTitle} />
+      <ProductContainer searchTitle={searchTitle} />
     </div>
   );
 }

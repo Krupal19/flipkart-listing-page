@@ -1,17 +1,27 @@
-import React from 'react'
-import SearchBar from './SearchBar';
+import React from "react";
 
-function Header() {
+function Header({ setSearchTitle }) {
     return (
         <header>
             <span className="logoName">Flipkart</span>
-            <SearchBar />
+            <input
+                type="search"
+                className="search"
+                placeholder="Search here..."
+                onChange={(event) => {
+                    setSearchTitle(event.target.value);
+                }}
+            />
             <ul className="menu">
-                <li>Home</li>
-                <li>Cart</li>
+                <li>
+                    <a href="App.js">Home</a>
+                </li>
+                <li>
+                    <a href="Cart.js">Cart</a>
+                </li>
             </ul>
         </header>
-    )
+    );
 }
 
 export default Header;

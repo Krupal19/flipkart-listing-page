@@ -27,10 +27,16 @@
     gap: 1em;
     font-size: 20px;
   }
+
+  ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
   
   .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(250px, 1fr));
     gap: 1em;
     padding: 1.5rem;
     background-color: #fafafa;
@@ -45,9 +51,10 @@
     }  
   }
   
-  .product-img{
-    height: 150px;
-    object-fit: contain;
+  .product-img {
+      height: 150px;
+      object-fit: contain;
+      margin-inline: auto;
   }
 
   .likebtn{
@@ -65,12 +72,12 @@
   }
 
   .product-card {
-    --shadow-color: 0deg 0% 80%;
-  
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    transition: box-shadow .2s ease;
+    transition: box-shadow 0.2s ease;
+    display: grid;
+    gap: 1em;
   }
   
   .product-card:hover {
@@ -87,13 +94,32 @@
     justify-content: space-between;
   }
 
-  .flex > * {
+  .flex > *  {
     margin: 0;
   }
 
-  .flex2{
-    display: flex;
-    justify-content: space-between;
+  .btn {
+    font: inherit;
+    padding: 0.5em 1em;
+    border: none;
+    outline: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover,
+  .btn:focus-visible {
+    opacity: 0.8;
+  }
+
+  .product-description {
+    margin: 0;
+  }
+
+  .product-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0;
   }
 
   .product-description,
@@ -101,21 +127,39 @@
     color: #606060;
   }
 
-  .product-price{
-    font-size: 1.2rem;
-  }
-
-  .product-category{
-    background-color: #b1b1ff;
-    color: #1e1ec2;
-    padding: .2em;
-    border-radius: .4rem;
+  .product-price {
+    font-size: 1.2em;
+    font-weight: 600;
   }
   
-  .product-discountPercentage{
+  .product-rating {
+    background-color: #fef54f;
+    color: #9d5800;
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3em;
+  }
+  
+  .product-stock {
+    border-bottom: 2px solid orange;
+  }
+  
+  .product-discount {
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
     background-color: #c5ffc5;
     color: #117d11;
     font-weight: 600;
-    padding: .2em;
-    border-radius: .4rem;
+  }
+
+  .btn[data-type="add-to-cart"] {
+    background-color: #6969ff;
+    color: white;
+    font-weight: 600;
+    align-self: end;
+    justify-self: center;
   }
