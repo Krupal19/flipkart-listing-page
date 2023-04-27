@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header({ setSearchTitle }) {
     return (
@@ -14,10 +15,10 @@ function Header({ setSearchTitle }) {
             />
             <ul className="menu">
                 <li>
-                    Home
+                    <Link to={`/`}>Home</Link>
                 </li>
                 <li>
-                    Cart
+                    <Link to={`/Cart`}>Cart</Link>
                 </li>
             </ul>
         </header>

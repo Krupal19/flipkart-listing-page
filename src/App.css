@@ -170,3 +170,21 @@
     align-self: end;
     justify-self: center;
   }
+
+
+  div .error{
+    text-align: center;
+    width: 640px;
+    padding-top: 13rem;
+    margin: auto;
+  }
+
+  .errorNumber{
+    color: var(--clr-primary);
+    font-size: 7em;
+    font-weight: 600;
+  }
+
+  .errorText{
+    font-size: 2rem;
+  }
