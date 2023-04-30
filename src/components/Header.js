@@ -18,7 +18,10 @@ function Header({ setSearchTitle }) {
                     <Link to={`/`}>Home</Link>
                 </li>
                 <li>
-                    <Link to={`/Cart`}>Cart</Link>
+                    <Link to={`/cart`}>Cart</Link>
+                </li>
+                <li>
+                    <Link to={`/deals`}>Deal</Link>
                 </li>
             </ul>
         </header>

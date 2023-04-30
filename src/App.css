@@ -173,10 +173,12 @@
 
 
   div .error{
+    /* display: flex; */
+    margin: auto;
     text-align: center;
     width: 640px;
-    padding-top: 13rem;
-    margin: auto;
+    /* padding-top: 13rem; */
+    font-size: 2rem;
   }
 
   .errorNumber{
@@ -186,5 +188,4 @@
   }
 
   .errorText{
-    font-size: 2rem;
   }

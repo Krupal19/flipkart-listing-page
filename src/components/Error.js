@@ -5,7 +5,7 @@ function Error() {
     return (
         <>
             <Header />
-            <div className='error'><span className='errorNumber'>404</span><br /><span className='errorText'>Page is not found</span></div>
+            <div className='error'><span className='errorNumber'>404</span><br />Page is not found</div>
         </>
     )
 }
