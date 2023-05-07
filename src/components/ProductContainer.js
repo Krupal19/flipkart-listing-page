@@ -33,6 +33,7 @@ function ProductContainer({ searchTitle }) {
         productList.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             title={product.title}
             description={product.description}
             imageURL={product.images[0]}

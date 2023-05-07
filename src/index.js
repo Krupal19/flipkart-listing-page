@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import Error from "./components/Error";
 import TodaysDeal from './components/TodaysDeal';
 import Root from './components/Root';
+import Product from './components/Product';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/deals",
         element: <TodaysDeal />,
+      },
+      {
+        path: "/products/:productID",
+        element: <Product />,
       },
     ]
   },
