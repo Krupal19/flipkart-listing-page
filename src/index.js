@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import TodaysDeal from './components/TodaysDeal';
 import Root from './components/Root';
 import Product from './components/Product';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {

@@ -9,7 +9,7 @@ function ProductCard({ title, description, imageURL, price, rating, stock, disco
             <AiOutlineHeart className='like-button' />
             {/* <AiFillHeart color="red" className='linkbtn'/> */}
             <Link to={`/products/${id}`}><img src={imageURL} className="product-img" alt={title} /></Link>
-            <Link to={`/products/${id}`}><p className='product-title'>{title}</p></Link>
+            <Link to={`/products/${id}`} className='product-link'><p className='product-title'>{title}</p></Link>
             <p className='product-description'>{description}</p>
             <div className="flex">
                 <p className="product-price">&#36;{price}</p>
