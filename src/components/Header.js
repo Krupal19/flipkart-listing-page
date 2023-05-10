@@ -8,15 +8,9 @@ function Header({ setSearchTitle }) {
             {/* <input type="search" className="search" placeholder="Search here..."
                 onChange={(event) => { setSearchTitle(event.target.value); }} /> */}
             <ul className="menu">
-                <Link to="/" className="link">
-                    <li>Home</li>
-                </Link>
-                <Link to="/cart" className="link">
-                    <li>Cart</li>
-                </Link>
-                <Link to="/deals" className="link">
-                    <li>Deals</li>
-                </Link>
+                <li><Link to="/" className="link"> Home</Link></li>
+                <li><Link to="/cart" className="link"> Cart </Link></li>
+                <li><Link to="/deals" className="link"> Deals </Link></li>
             </ul>
         </header>
     );
