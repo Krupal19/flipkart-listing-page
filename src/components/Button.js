@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({ text, type }) {
+function Button({ text, type }) { 
   return (
     <button className="btn" data-type={type}>
       {text}

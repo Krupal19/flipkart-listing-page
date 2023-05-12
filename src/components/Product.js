@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 
 function Product() {
-    const urlParams = useParams()
+    var urlParams = useParams();
 
     const [oneProduct, setOneProduct] = useState({});
 
@@ -11,7 +11,6 @@ function Product() {
     }, []);
 
     const fetchData = () => {
-        // let productList;
         fetch(`https://dummyjson.com/products/${urlParams.productID}`)
             .then((data) => data.json())
             .then((jsondata) => {
@@ -22,7 +21,7 @@ function Product() {
     };
 
     return (
-        <section className='container'>  
+        <section className='container'>
             <div className=''></div>
             <div>{oneProduct.title}</div>
             <div>{oneProduct.id}</div>

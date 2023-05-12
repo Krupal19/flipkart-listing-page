@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import CartDetails from './CartDetails';
+import CartProductContainerRight from './CartProductContainerRight';
 
 function Cart() {
 
     return (
-        <>
-            <div>Cart</div>
-        </>
+        <div className='container'>
+            <CartDetails />
+            <CartProductContainerRight />
+        </div>
     )
 }
 
 
-export default Cart
+export default Cart;

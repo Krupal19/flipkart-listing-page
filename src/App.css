@@ -1,16 +1,19 @@
+/* Add Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --clr-primary: #2874f0;
   }
   
   header {
-    background-color: var(--clr-primary);
-    color: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 4rem;
     padding-inline: 4rem;
-    padding-block: 0.4rem;
+    padding-block: 1.4rem;
   }
   
   img {
@@ -42,6 +45,7 @@
   }
 
   .brand {
+    color: #fff;
     font-size: 28px;
   }
   
@@ -71,6 +75,13 @@
     padding: 1.5rem;
   }
 
+  .product-container.light {
+    background-color: transparent;
+  }
+  .product-container.dark {
+    background-color: #333;
+  }
+
   @media (max-width: 350px) {
     header{
       display: flex;
@@ -87,6 +98,9 @@
   }
 
   .likebtn{
+    font-size: 1.2em;
+  }
+  .likebtn.dark{
     font-size: 1.2em;
   }
 
@@ -110,6 +124,9 @@
     text-decoration: none;
     color: #000;
   }
+  .product-link.dark{
+    color: #ffffff !important;
+  }  
   
   .product-link:hover,
   .product-link:focus-visible {
@@ -124,14 +141,31 @@
     display: grid;
     gap: 1em;
   }
+
+  .product-card.light {
+    background: #fafafa;
+  }
+  .product-card.dark {
+    background: #4d4d4d;
+    color: #fff ;
+  }
   
   .product-card:hover {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     background-color: white;
   }
+  .product-card.dark:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    background-color: #0d0101;
+  }
   
   .product-title{
     font-size: 1.2rem;
+  } 
+
+  .product-title.dark{
+    font-size: 1.2rem;
+    color: #fff;
   }
 
   .flex{
@@ -223,8 +257,31 @@
     font-weight: 600;
   }
 
-  /* .errorText{
-  } */
+  /* light and dark mood css */
+  .white-content {
+    background: #e4e4e4;
+  }  
 
-  /* Products CSS */
-  
+
+  /* dark mood and light */
+
+.light{
+  background-color: var(--clr-primary);
+}
+
+.dark{
+  background-color: #111b20;
+}
+
+.modeLabel {
+  color: white;
+}
+
+.switch{
+  /* background-color: #000; */
+  display: flex;
+  align-items: center;
+  gap: .2em;
+}
+
+/* .switch:hover */

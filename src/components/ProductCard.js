@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineHeart, AiFillStar } from "react-icons/ai";
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from './ThemeContext';
 
 function ProductCard({ title, description, imageURL, price, rating, stock, discount, id }) {
+    const { theme } = useContext(ThemeContext)
     return (
-        <div className="product-card">
+        <div className={`product-card ${theme}`}>
             <AiOutlineHeart className='like-button' />
             {/* <AiFillHeart color="red" className='linkbtn'/> */}
             <Link to={`/products/${id}`}><img src={imageURL} className="product-img" alt={title} /></Link>

@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import TodaysDeal from './components/TodaysDeal';
 import Root from './components/Root';
 import Product from './components/Product';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// import ThemeContextWrapper from './theme/ThemeWrapper';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +40,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // <ThemeContextWrapper>
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

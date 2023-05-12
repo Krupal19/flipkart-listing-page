@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import allProducts from "../data";
 import ProductCard from "./ProductCard";
+import { ThemeContext } from "./ThemeContext";
+
 
 function ProductContainer({ searchTitle }) {
   const [allProducts, setAllProducts] = useState([]);
@@ -27,8 +29,9 @@ function ProductContainer({ searchTitle }) {
     return val;
   });
 
+  const { theme } = useContext(ThemeContext)
   return (
-    <section className="product-container">
+    <section className={`product-container ${theme}`}>
       {productList &&
         productList.map((product) => (
           <ProductCard
