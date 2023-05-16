@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router'
 import Header from './Header'
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from "../context/ThemeContext";
 
 function Root() {
     const [theme, setTheme] = useState("light");

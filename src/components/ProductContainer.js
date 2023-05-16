@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-// import allProducts from "../data";
 import ProductCard from "./ProductCard";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 
 function ProductContainer({ searchTitle }) {
   const [allProducts, setAllProducts] = useState([]);
+  const { theme, searchQuery } = useContext(ThemeContext)
+  
 
   useEffect(() => {
     fetchData();
@@ -23,13 +24,12 @@ function ProductContainer({ searchTitle }) {
   };
 
   let productList = allProducts.filter((val) => {
-    if (searchTitle) {
-      return val.title.toLowerCase().includes(searchTitle.toLowerCase());
+    if (searchQuery) {
+      return val.title.toLowerCase().includes(searchQuery.toLowerCase());
     }
     return val;
   });
 
-  const { theme } = useContext(ThemeContext)
   return (
     <section className={`product-container ${theme}`}>
       {productList &&

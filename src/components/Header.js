@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
-import ReactSwitch from 'react-switch';
-import { ThemeContext } from './ThemeContext';
-import { MdOutlineLightMode, MdDarkMode } from "react-icons/ai";
+import { ThemeContext } from "../context/ThemeContext";
+import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 
 // function Header({ setSearchTitle }) {
 function Header() {
@@ -17,13 +16,16 @@ function Header() {
                 <li><Link to="/" className="link"> Home</Link></li>
                 <li><Link to="/cart" className="link"> Cart </Link></li>
                 <li><Link to="/deals" className="link"> Deals </Link></li>
-
-                <div className='switch'>
-                    <label className='modeLabel'>{theme === "light" ? "light mode" : "dark mode"}</label>
-                    <ReactSwitch onChange={toogleTheme} checked={theme === "dark"} />
-                </div>
+                <li>
+                    <button
+                        className="theme-btn"
+                        onClick={() => toogleTheme(theme === "light" ? "dark" : "light")}
+                    >
+                        {theme === "light" ? <MdDarkMode /> : <MdOutlineLightMode />}
+                    </button>
+                </li>
             </ul>
-        </header>
+        </header >
     );
 }
 

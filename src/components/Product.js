@@ -22,14 +22,25 @@ function Product() {
 
     return (
         <section className='container'>
-            <div className=''></div>
-            <div>{oneProduct.title}</div>
-            <div>{oneProduct.id}</div>
-            <img src={oneProduct.thumbnail} />
-            <div>{oneProduct.description}</div>
-            <div>{oneProduct.price}</div>
-            <div>{oneProduct.rating}</div>
-            <div>{oneProduct.discountPercentage}</div>
+            <div className='product-grid'>
+                <img src={oneProduct.thumbnail} alt={oneProduct.title} />
+                <div className='product-details'>
+                    <h1 className='product-page-title'>{oneProduct.title}</h1>
+                    <p className='product-raing'>
+                        {oneProduct.rating}
+                    </p>
+                </div>
+                <p className='product-page-desc'>{oneProduct.description}</p>
+                <div className='flex' data-justify="left">
+                    <p className='product-page-price'>{oneProduct.price}</p>
+                </div>
+
+                <div className='flex' style={{ marginBlock: "2em" }}>
+                    <button text="Add to cart" type="cart-to-cart"> Buy now</button>
+                    {/* <Button text="Add to cart" type="cart-to-cart" /> */}
+                    {/* <Button text="Buy Now" type="buy-now" /> */}
+                </div>
+            </div>
         </section>
     )
 }

@@ -1,10 +1,11 @@
 /* Add Tailwind */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
     --clr-primary: #2874f0;
+    --clr-btn-primary: #6969ff;
   }
   
   header {
@@ -13,7 +14,7 @@
     align-items: center;
     gap: 4rem;
     padding-inline: 4rem;
-    padding-block: 1.4rem;
+    /* padding-block: 1.4rem; */
   }
   
   img {
@@ -55,6 +56,7 @@
     justify-content: space-between;
     gap: 1em;
     font-size: 20px;
+    align-items: center;
   }
   
   .header-search {
@@ -124,9 +126,6 @@
     text-decoration: none;
     color: #000;
   }
-  .product-link.dark{
-    color: #ffffff !important;
-  }  
   
   .product-link:hover,
   .product-link:focus-visible {
@@ -230,8 +229,12 @@
   font-weight: 600;
 }
 
+.product-card.dark p:not(.product-rating, .product-discount) {
+  color: #fff;
+}
+
 .btn[data-type="add-to-cart"] {
-  background-color: #6969ff;
+  background-color: var(--clr-btn-primary);
   color: white;
   font-weight: 600;
   align-self: end;
@@ -264,13 +267,23 @@
 
 
   /* dark mood and light */
+  .theme-btn {
+    padding: 0.8em;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff30;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
 
 .light{
   background-color: var(--clr-primary);
 }
 
 .dark{
-  background-color: #111b20;
+  background-color: #1b1b1b;
+  color: #fff;
 }
 
 .modeLabel {
