@@ -1,39 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { ThemeContext } from "../context/ThemeContext";
+import { ProductsData, ThemeContext } from "../Contexts";
 
 
 function ProductContainer({ searchTitle }) {
-  const [allProducts, setAllProducts] = useState([]);
-  const { theme, searchQuery } = useContext(ThemeContext)
-  
+  const { allProducts } = useContext(ProductsData);
+  const { theme, searchQuery } = useContext(ThemeContext);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = () => {
-    // let productList;
-    fetch("https://dummyjson.com/products")
-      .then((data) => data.json())
-      .then((jsondata) => {
-        console.log(jsondata);
-        setAllProducts(jsondata.products);
-      })
-      .catch((error) => console.error(error));
-  };
-
-  let productList = allProducts.filter((val) => {
+  const productsList = allProducts.filter((product) => {
+    const title = product.title.toLowerCase();
     if (searchQuery) {
-      return val.title.toLowerCase().includes(searchQuery.toLowerCase());
+      return title.includes(searchQuery.toLowerCase());
     }
-    return val;
+    return product;
   });
 
   return (
     <section className={`product-container ${theme}`}>
-      {productList &&
-        productList.map((product) => (
+      {productsList &&
+        productsList.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}

@@ -8,7 +8,7 @@ function SearchBar({ setSearchValue }) {
     <input
       type="search"
       className="header-search"
-      placeholder="Search here"
+      placeholder="Search here...."
       onChange={(e) => handleChange(e)}
     />
   );

@@ -1,13 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AiOutlineHeart, AiFillStar } from "react-icons/ai";
-import Button from './Button';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from "../context/ThemeContext";
-// import { CartContext } from "../context/CartContext";
+import { ThemeContext, CartContext } from "../Contexts";
+import AddToCartButton from "./AddToCartButton";
+import RemoveFromCartButton from "./RemoveFromCartButton";
 
 function ProductCard({ title, description, imageURL, price, rating, stock, discount, id }) {
     const { theme } = useContext(ThemeContext);
     // const { addToCart } = useContext(CartContext);
+
+    const addButton = (
+        <AddToCartButton
+            productDetails={{ id, title, description, imageURL, price, rating, stock, discount }}
+        />
+    );
+    const removeButton = <RemoveFromCartButton productId={id} />;
+
+    const { cartItems } = useContext(CartContext);
+
+    const [cardButton, setCardButton] = useState(addButton);
+    // <AddToCartButton
+    //   productDetails={{ id, title, description, imageURL, price, rating, stock, discount }}
+    // />;
+    useEffect(() => {
+        cartItems.forEach((item) => {
+            if (item.id == id) {
+                setCardButton((prevButton) => (prevButton === addButton ? removeButton : addButton));
+            }
+        });
+    }, [cartItems]);
+
     return (
         <div className={`product-card ${theme}`}>
             <AiOutlineHeart className='like-button' />
@@ -26,9 +48,7 @@ function ProductCard({ title, description, imageURL, price, rating, stock, disco
                 <p className="product-stock">Stock: {stock}</p>
                 <p className="product-discount">{discount}%</p>
             </div>
-            <Button text="Add to Cart" type="add-to-cart"
-            //clickHandler={() => addToCart({ id, title, imageURL, discount, price })}
-            />
+            {cardButton}
         </div>
     );
 }
