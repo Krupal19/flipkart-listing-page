@@ -24,7 +24,7 @@ function ProductCard({ title, description, imageURL, price, rating, stock, disco
     // />;
     useEffect(() => {
         cartItems.forEach((item) => {
-            if (item.id == id) {
+            if (item.id === id) {
                 setCardButton((prevButton) => (prevButton === addButton ? removeButton : addButton));
             }
         });
