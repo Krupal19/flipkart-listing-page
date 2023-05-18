@@ -6,11 +6,11 @@ import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 
 // function Header({ setSearchTitle }) {
 function Header({ cartItemCount }) {
-    const { theme, toogleTheme } = useContext(ThemeContext);
+    const { theme, setTheme } = useContext(ThemeContext);
 
     function btnThemeChange() {
         const newTheme = theme === "light" ? "dark" : "light";
-        toogleTheme(newTheme);
+        setTheme(newTheme);
         localStorage.setItem("theme", newTheme);
     }
 
