@@ -1,44 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router';
+import { AiFillStar } from "react-icons/ai";
+import Button from "./Button";
+import { ProductsData } from "../Contexts";
+import AddToCartButton from "./AddToCartButton";
 
 function Product() {
-    var urlParams = useParams();
+    const productId = useParams().productID;
 
-    const [oneProduct, setOneProduct] = useState({});
+    const { allProducts } = useContext(ProductsData);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    const product = allProducts.filter((prod) => prod.id === parseInt(productId))[0];
 
-    const fetchData = () => {
-        fetch(`https://dummyjson.com/products/${urlParams.productID}`)
-            .then((data) => data.json())
-            .then((jsondata) => {
-                console.log(jsondata);
-                setOneProduct(jsondata);
-            })
-            .catch((error) => console.error(error));
-    };
+    let stockMarkup = <p className="product-page-stock">Stock: {product.stock}</p>;
 
     return (
-        <section className='container'>
-            <div className='product-grid'>
-                <img src={oneProduct.thumbnail} alt={oneProduct.title} />
-                <div className='product-details'>
-                    <h1 className='product-page-title'>{oneProduct.title}</h1>
-                    <p className='product-raing'>
-                        {oneProduct.rating}
-                    </p>
-                </div>
-                <p className='product-page-desc'>{oneProduct.description}</p>
-                <div className='flex' data-justify="left">
-                    <p className='product-page-price'>{oneProduct.price}</p>
-                </div>
-
-                <div className='flex' style={{ marginBlock: "2em" }}>
-                    <button text="Add to cart" type="cart-to-cart"> Buy now</button>
-                    {/* <Button text="Add to cart" type="cart-to-cart" /> */}
-                    {/* <Button text="Buy Now" type="buy-now" /> */}
+        <section className="container">
+            <div className="product-grid">
+                <img src={product.thumbnail} alt={product.title} />
+                <div className="product-details">
+                    <div className="flex">
+                        <h1 className="product-page-title">{product.title}</h1>
+                        <p className="product-rating">
+                            <AiFillStar />
+                            {product.rating}
+                        </p>
+                    </div>
+                    <p className="product-page-desc">{product.description}</p>
+                    <div className="flex" data-justify="left">
+                        <p className="product-page-price">${product.price}</p>
+                        {stockMarkup}
+                    </div>
+                    <div className="flex" style={{ marginBlock: "2em" }}>
+                        {/* <Button text="Add to Cart" type="add-to-cart" /> */}
+                        <AddToCartButton
+                            productDetails={{
+                                id: product.id,
+                                title: product.title,
+                                description: product.description,
+                                imageURL: product.imageURL,
+                                price: product.price,
+                                rating: product.rating,
+                                stock: product.stock,
+                                discount: product.discount,
+                            }}
+                        />
+                        <Button text="Buy Now" type="buy-now" />
+                    </div>
                 </div>
             </div>
         </section>
