@@ -36,7 +36,7 @@ function Root() {
     // Remove the product from cart
     const removeFromCart = (productId) => {
         console.log("prodID", productId);
-        const newArr = cartItems.filter((item) => item.id != productId);
+        const newArr = cartItems.filter((item) => item.id !== productId);
         console.log(newArr);
         // 👇🏻 returns new array without the product in parameter of this function
         // const arr = [...cartItems.slice(0, productIndex), ...cartItems.slice(productIndex + 1)];

@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ProductCard from "./ProductCard";
 import { ProductsData, ThemeContext } from "../Contexts";
 import SortProducts from "./SortProducts";
 import Filter from "./Filter";
 
 
-function ProductContainer({ }) {
+function ProductContainer() {
   const { allProducts } = useContext(ProductsData);
   const { theme, searchQuery } = useContext(ThemeContext);
 

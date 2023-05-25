@@ -7,7 +7,6 @@ function App() {
   const [searchTitle, setSearchTitle] = useState("");
   return (
     <div className="App">
-      {/* <Header setSearchTitle={setSearchTitle} /> */}
       <ProductContainer searchTitle={searchTitle} />
     </div>
   );
