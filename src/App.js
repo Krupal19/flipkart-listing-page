@@ -4,7 +4,7 @@ import ProductContainer from './components/ProductContainer';
 import { useState } from "react";
 
 function App() {
-  const [searchTitle, setSearchTitle] = useState("");
+  const [searchTitle] = useState("");
   return (
     <div className="App">
       <ProductContainer searchTitle={searchTitle} />

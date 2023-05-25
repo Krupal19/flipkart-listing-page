@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import Button from "./Button";
 import RemoveFromCartButton from "./RemoveFromCartButton";
 
-function CartProductCard({ productDetails, setCartPrice }) {
+function CartProductCard({ productDetails }) {
   const { id, title, imageURL, discount, price } = productDetails;
 
   const [quantity, setQuantity] = useState(1);
   if (quantity < 1) setQuantity(1);
-
-  const discountInCurrency = Math.round(price * discount) / 100;
-  const discountedPrice = price - discountInCurrency;
 
   const increaseQuantity = () => {
     setQuantity((prev) => prev + 1);
